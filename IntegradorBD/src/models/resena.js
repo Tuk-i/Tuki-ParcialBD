@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const resenaSchema = new mongoose.Schema({
   usuario: {
@@ -27,4 +27,4 @@ const resenaSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Resena', resenaSchema);
+export default mongoose.model('Resena', resenaSchema);

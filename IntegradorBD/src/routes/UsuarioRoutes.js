@@ -9,11 +9,10 @@ import {
   actualizarPassword
 } from "../controllers/UsuarioController.js";
 
-import verificarToken from "../middelwares/authMiddelware.js";
-import protegerRutas from "../middelwares/protegerRutas.js";
+import verificarToken from "../middlewares/verificarToken.js";
+import protegerRutas from "../middlewares/protegerRutas.js";
 
 const router = express.Router();
-
 
 router.post("/register", registrarUsuario);
 router.post("/login", loginUsuario);
@@ -24,7 +23,6 @@ router.get("/perfil", verificarToken, (req, res) => {
 
 router.patch("/perfil", verificarToken, actualizarPerfil);
 router.patch("/password", verificarToken, actualizarPassword);
-
 
 router.get("/", verificarToken, protegerRutas("administrador"), listarUsuarios);
 router.get("/:id", verificarToken, protegerRutas("administrador"), obtenerUsuario);

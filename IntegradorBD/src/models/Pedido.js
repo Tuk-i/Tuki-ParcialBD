@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const detalleProductoSchema = new mongoose.Schema({
   producto: {
@@ -49,4 +49,4 @@ const pedidoSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Pedido', pedidoSchema);
+export default mongoose.model('Pedido', pedidoSchema);

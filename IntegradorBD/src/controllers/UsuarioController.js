@@ -1,6 +1,6 @@
+import jwt from "jsonwebtoken";
 import Usuario from "../models/Usuario.js";
 import Carrito from "../models/Carrito.js";
-import jwt from "jsonwebtoken";
 import { hashearPassword, compararPassword } from "../middlewares/hashPassword.js";
 import {
   listarTodos,
@@ -49,7 +49,7 @@ export const registrarUsuario = async (req, res, next) => {
   }
 };
 
-const registrarAdministrador = async (req, res) => {
+export const registrarAdministrador = async (req, res) => {
   try {
     const { nombre, email, password, direccion, telefono } = req.body;
 
@@ -106,7 +106,6 @@ export const eliminarUsuario = async (req, res, next) => {
       { eliminado: true }
     );
 
-
     res.status(200).json({ success: true, data: usuario });
   } catch (e) {
     next(e);
@@ -136,7 +135,7 @@ export const actualizarPerfil = async (req, res, next) => {
   }
 };
 
-export const contraseña = async (req, res, next) => {
+export const actualizarPassword = async (req, res, next) => {
   try {
     const { actual, nueva } = req.body;
 

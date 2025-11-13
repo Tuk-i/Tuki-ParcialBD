@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const itemCarritoSchema = new mongoose.Schema({
   producto: {
@@ -31,4 +31,4 @@ const carritoSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Carrito', carritoSchema);
+export default mongoose.model('Carrito', carritoSchema);
