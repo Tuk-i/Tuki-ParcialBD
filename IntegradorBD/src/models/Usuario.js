@@ -24,6 +24,14 @@ const usuarioSchema = new mongoose.Schema({
     type: String,
     enum: ['cliente', 'administrador'],
     default: 'cliente'
+  },
+  password: {
+  type: String,
+  required: [true, 'La contraseña es obligatoria.']
+  },
+  eliminado: {
+    type: Boolean,
+    default: false
   }
 }, { timestamps: true });
 
