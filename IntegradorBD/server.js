@@ -7,6 +7,7 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use("/api/usuarios", usuariosRoutes);
 
 app.get('/', (req, res) => res.json({ ok: true }));
 

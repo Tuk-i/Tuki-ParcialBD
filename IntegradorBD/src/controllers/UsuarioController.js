@@ -14,7 +14,8 @@ export const listarUsuarios = async (req, res, next) => {
   try {
     const { estado } = req.query;
 
-    let filtro = {};
+    let filtro = { rol: "cliente" }; 
+
     if (estado === "activos") filtro.eliminado = false;
     else if (estado === "eliminados") filtro.eliminado = true;
 
@@ -24,6 +25,7 @@ export const listarUsuarios = async (req, res, next) => {
     next(e);
   }
 };
+
 
 export const obtenerUsuario = obtenerPorId(Usuario);
 

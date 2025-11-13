@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt';
 
 export const hashearPassword = async (password) => {
-  const saltRounds = 20;
+  const saltRounds = 10;
   return await bcrypt.hash(password, saltRounds);
 };
 

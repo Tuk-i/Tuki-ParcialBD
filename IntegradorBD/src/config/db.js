@@ -8,6 +8,7 @@ const conectarDB = async () => {
       pass: process.env.MONGO_PASS,
     });
     console.log('MongoDB conectado');
+    console.log("Conectando a MongoDB con URI:", uri);
   } catch (err) {
     console.error('Error de conexión:', err.message);
     process.exit(1);
